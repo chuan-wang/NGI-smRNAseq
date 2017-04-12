@@ -52,6 +52,7 @@ RUN mkdir /opt/TrimGalore && \
 # Install Bowtie
 RUN wget -q -O bowtie.zip https://sourceforge.net/projects/bowtie-bio/files/bowtie/1.2.0/bowtie-1.2-linux-x86_64.zip/download && \
   unzip bowtie.zip -d /opt/ && \
+  chmod 755 /opt/bowtie-1.2/bowtie && \
   ln -s /opt/bowtie-1.2/bowtie /opt/bowtie && \
   rm bowtie.zip
 ENV PATH=${PATH}:/opt/bowtie
@@ -59,6 +60,7 @@ ENV PATH=${PATH}:/opt/bowtie
 # Install Bowtie2
 RUN wget -q -O bowtie2.zip http://sourceforge.net/projects/bowtie-bio/files/bowtie2/2.3.1/bowtie2-2.3.1-linux-x86_64.zip/download && \
   unzip bowtie2.zip -d /opt/ && \
+  chmod 755 /opt/bowtie2-2.3.1/bowtie2 && \
   ln -s /opt/bowtie2-2.3.1/bowtie2 /opt/bowtie2 && \
   rm bowtie2.zip
 ENV PATH=${PATH}:/opt/bowtie2
