@@ -54,12 +54,14 @@ RUN wget -q -O bowtie.zip https://sourceforge.net/projects/bowtie-bio/files/bowt
   unzip bowtie.zip -d /opt/ && \
   ln -s /opt/bowtie-1.2/ /opt/bowtie && \
   rm bowtie.zip
+ENV PATH $PATH:/opt/bowtie
 
 # Install Bowtie2
 RUN wget -q -O bowtie2.zip http://sourceforge.net/projects/bowtie-bio/files/bowtie2/2.3.1/bowtie2-2.3.1-linux-x86_64.zip/download && \
   unzip bowtie2.zip -d /opt/ && \
   ln -s /opt/bowtie2-2.3.1/ /opt/bowtie2 && \
   rm bowtie2.zip
+ENV PATH $PATH:/opt/bowtie2
 
 # Install SAMTools
 ENV SAMTOOLS_VERSON="1.4"
