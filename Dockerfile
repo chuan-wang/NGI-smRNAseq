@@ -20,7 +20,7 @@ RUN apt-get update && \
         libpcre3-dev \
         libreadline-dev \
         libssl-dev \
-        libtbb2-dev \
+        libtbb2 \
         make \
         python-dev \
         zlib1g-dev \
@@ -53,7 +53,7 @@ RUN mkdir /opt/TrimGalore && \
 # Install Bowtie
 RUN wget -q -O bowtie.zip https://sourceforge.net/projects/bowtie-bio/files/bowtie/1.2.0/bowtie-1.2-linux-x86_64.zip/download && \
   unzip bowtie.zip -d /opt/ && \
-  ln -s /opt/bowtie-1.2/ /usr/local/bin/bowtie && \
+  ln -s /opt/bowtie-1.2/bowtie /usr/local/bin/bowtie && \
   rm bowtie.zip
 
 # Install Bowtie2
